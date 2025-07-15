@@ -5,7 +5,6 @@ import json
 import os
 import random
 
-
 TOKEN = ""
 DATA_FILE = "points.json"
 BLACKLISTED_ROLES = ["🚫Чорний список", "😈 4/5", "😈 5/5", "😈 3/5"]
@@ -22,6 +21,7 @@ intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 tree = bot.tree
+
 
 def load_data():
 	if os.path.exists(DATA_FILE):
@@ -343,7 +343,7 @@ async def адмінзвіт(
     нікнейм: str,
     правило: app_commands.Choice[str],
     стімайді: str,
-    час_покарання: str = None  # ✅ Тепер правильно
+    час_покарання: str = None  
 ):
     покарання = покарання.value
     правило = правило.value
